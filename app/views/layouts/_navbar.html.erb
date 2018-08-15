@@ -1,0 +1,28 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/restaurants" class="navbar-wagon-brand">
+    <%=  Restaurant::CATEGORIES.include?(params[:lang]) ? image_tag("#{params[:lang]}-food.png") : image_tag("logo.png") %>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <%= link_to "Restaurant List", restaurants_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Add a New restaurant", new_restaurant_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+  <!--       <img src="https://kitt.lewagon.com/placeholder/users/martingalle" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
+        <div class="navbar-wagon-item navbar-wagon-link dropdown-toggle" data-toggle="dropdown">Click to choose category<span class="caret"></span></div>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <% Restaurant::CATEGORIES.each do |lang| %>
+              <li><%= link_to lang.capitalize, restaurants_path(lang: lang), class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="restaurant-header">
+    <h1><%= @restaurant.name %></h1>
+    <div class="back-button">
+    <%= link_to "Back to list", restaurants_path, class: "btn btn-success" %> <%= link_to "Back to Restaurant", restaurant_path(@restaurant), class: "btn btn-primary"  %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="review-all">
+      <% @reviews.each do |review| %>
+        <div class="col-xs-6 col-sm-3">
+          <div class="card">
+            <p><%= review.content %></p>
+            <div class="stars">
+              <ul>
+                <% review.rating.times do %>
+                  <i class='fa fa-star jaune'></i>
+                <% end %>
+                <% (5 - review.rating).times do %>
+                  <i class='fa fa-star gris'></i>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

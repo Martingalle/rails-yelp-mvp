@@ -1,0 +1,26 @@
+<h1>Vos restaurants préférés</h1>
+
+<div class="row">
+  <% @restaurants.each do |restaurant| %>
+  <div class="col-xs-12 col-sm-6">
+      <div class="restaurant-card">
+        <div class="restaurant-picture"></div>
+        <div class="restaurant-infos">
+          <h1><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h1>
+          <p>Rating Restaurant !</p>
+          <h6><%= restaurant.address %></h6>
+          <h6><%= restaurant.phone_number %></h6>
+        </div>
+        <div class="restaurant-category">
+          <div class="flag">
+            <%= image_tag("#{restaurant.category}.jpg") %>
+          </div>
+          <div class="reviews">
+            <%= link_to "See reviews", restaurant_reviews_path(restaurant)%>
+          <%= link_to "", restaurant_reviews_path(restaurant), class: "fas fa-share" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
