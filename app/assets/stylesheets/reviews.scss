@@ -23,3 +23,28 @@ ul {
   border-radius: 4px;
   box-shadow: 0px 0px 10px #CCCCCC;
 }
+
+#form-new {
+  margin-bottom: 20px;
+  margin-left: -100px;
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.hello {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+

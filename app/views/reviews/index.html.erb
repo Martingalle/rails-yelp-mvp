@@ -2,7 +2,7 @@
   <div class="restaurant-header">
     <h1><%= @restaurant.name %></h1>
     <div class="back-button">
-    <%= link_to "Back to list", restaurants_path, class: "btn btn-success" %> <%= link_to "Back to Restaurant", restaurant_path(@restaurant), class: "btn btn-primary"  %>
+    <input type="submit" id="add-a-review" value="add-a-review" class = "btn btn-success" style = "margin-left: 15px;"> <%= link_to "Back to list", restaurants_path, class: "btn btn-success" %> <%= link_to "Restaurant Details", restaurant_path(@restaurant), class: "btn btn-primary"  %>
     </div>
   </div>
 </div>
@@ -26,6 +26,14 @@
           </div>
         </div>
       <% end %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-2">
+        <div id="form-new" class="hidden">
+          <%= render 'form', reviews: @review, restaurant: @restaurant %>
+        </div>
     </div>
   </div>
 

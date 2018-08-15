@@ -21,3 +21,13 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree
+window.onload = function(){
+  let bouton = document.querySelector('#add-a-review');
+  bouton.addEventListener("click", (event) => {
+
+    let form = document.querySelector('#form-new')
+    form.classList.remove('hidden');
+  });
+}
+
+
